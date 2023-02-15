@@ -1,10 +1,13 @@
+import 'package:animal_crossing/commons/app_routes.dart';
 import 'package:animal_crossing/commons/assets/app_images.dart';
 import 'package:animal_crossing/commons/design/app_colors.dart';
 import 'package:animal_crossing/modules/home/widgets/home_container.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class HomeGrid extends StatelessWidget {
   final Size size;
+
   const HomeGrid({
     super.key,
     required this.size,
@@ -24,18 +27,24 @@ class HomeGrid extends StatelessWidget {
           crossAxisSpacing: 20,
           mainAxisSpacing: 20,
         ),
-        children: const [
+        children: [
           HomeContainer(
             color: AppColors.lightBlue,
             image: AppImages.fish,
+            size: size,
+            onTap: () => Modular.to.navigate(AppRoutes.fishDetailed),
           ),
           HomeContainer(
             color: AppColors.green2,
             image: AppImages.bug,
+            size: size,
+            onTap: () {},
           ),
           HomeContainer(
             color: AppColors.blue,
             image: AppImages.seaCreatures,
+            size: size,
+            onTap: () {},
           ),
         ],
       ),

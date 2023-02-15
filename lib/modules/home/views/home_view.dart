@@ -1,4 +1,3 @@
-import 'package:animal_crossing/commons/design/app_colors.dart';
 import 'package:animal_crossing/modules/home/widgets/home_body.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +9,6 @@ class HomeView extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: AppColors.white,
       body: HomeBody(
         size: size,
       ),
