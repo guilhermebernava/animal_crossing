@@ -17,7 +17,7 @@ class ApiBase implements IApiBase {
   });
 
   @override
-  Future<Either<ApiException, Map>> get({required String endpoint}) async {
+  Future<Either<ApiException, dynamic>> get({required String endpoint}) async {
     final port = ReceivePort();
     await Isolate.spawn<GetDto>(
       (props) async {

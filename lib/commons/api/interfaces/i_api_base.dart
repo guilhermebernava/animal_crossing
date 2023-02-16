@@ -11,5 +11,5 @@ abstract class IApiBase {
     required this.dio,
   });
 
-  Future<Either<ApiException, Map>> get({required String endpoint});
+  Future<Either<ApiException, dynamic>> get({required String endpoint});
 }
