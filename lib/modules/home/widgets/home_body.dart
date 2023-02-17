@@ -17,8 +17,8 @@ class HomeBody extends StatelessWidget {
       height: size.height,
       decoration: const BoxDecoration(
         image: DecorationImage(
-          fit: BoxFit.cover,
-          opacity: 0.4,
+          opacity: 0.3,
+          repeat: ImageRepeat.repeatY,
           image: AssetImage(
             AppImages.texture,
           ),

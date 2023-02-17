@@ -1,3 +1,4 @@
+import 'package:animal_crossing/commons/design/app_colors.dart';
 import 'package:animal_crossing/modules/home/widgets/home_body.dart';
 import 'package:flutter/material.dart';
 

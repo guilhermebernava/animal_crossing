@@ -29,19 +29,19 @@ class HomeGrid extends StatelessWidget {
         ),
         children: [
           HomeContainer(
-            color: AppColors.lightBlue,
+            color: AppColors.background2,
             image: AppImages.fish,
             size: size,
             onTap: () => Modular.to.navigate(AppRoutes.fishDetailed),
           ),
           HomeContainer(
-            color: AppColors.green2,
+            color: AppColors.background2,
             image: AppImages.bug,
             size: size,
             onTap: () {},
           ),
           HomeContainer(
-            color: AppColors.blue,
+            color: AppColors.background2,
             image: AppImages.seaCreatures,
             size: size,
             onTap: () {},

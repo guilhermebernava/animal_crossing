@@ -18,6 +18,14 @@ class FishMapper implements IFishMapper {
       name: name,
       price: map["price"],
       description: map["museum-phrase"],
+      isAllDay: map["availability"]["isAllDay"],
+      isAllYear: map["availability"]["isAllYear"],
+      location: map["availability"]["location"],
+      rarity: map["availability"]["rarity"],
+      catchPhrase: map["catch-phrase"],
+      typeShadow: map["shadow"],
+      monthsNothern: map["availability"]["month-northern"],
+      monthsSouthern: map["availability"]["month-southern"],
     );
   }
 

@@ -26,19 +26,20 @@ class HomeContainer extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: AppColors.black.withOpacity(0.3),
-              blurRadius: 5,
+              blurRadius: 3,
               spreadRadius: 0,
             )
           ],
           border: Border.all(
             color: AppColors.white,
-            width: 2.5,
+            width: 4,
           ),
           borderRadius: BorderRadius.circular(20),
           image: DecorationImage(
             image: AssetImage(
               image,
             ),
+            scale: 1.6,
           ),
         ),
       ),

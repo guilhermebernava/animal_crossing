@@ -14,7 +14,7 @@ class HomeLogo extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomPaint(
       painter: const HomeCustomContainer(
-        color: AppColors.brown,
+        color: AppColors.green,
       ),
       child: SizedBox(
         width: size.width,
