@@ -16,11 +16,19 @@ class ItemContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.symmetric(vertical: 12.5, horizontal: 20),
       child: Container(
         height: size.height * 0.25,
         width: double.infinity,
         decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.black.withOpacity(0.3),
+              blurRadius: 8,
+              spreadRadius: 2,
+              offset: const Offset(1, 2),
+            )
+          ],
           color: AppColors.blue,
           border: Border.all(
             color: AppColors.white,
@@ -35,12 +43,12 @@ class ItemContainer extends StatelessWidget {
           child: Row(
             children: [
               Container(
-                width: 120,
+                width: 110,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: NetworkImage(
                       fish.iconUrl,
-                      scale: 0.2,
+                      scale: 0.4,
                     ),
                   ),
                 ),
@@ -57,13 +65,26 @@ class ItemContainer extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ItemContainerText(text: fish.name, title: "Name:"),
+                  ItemContainerText(
+                    text: fish.name,
+                    title: "Name:",
+                    size: size,
+                  ),
                   ItemContainerText(
                     title: "Price:",
                     text: fish.price.toString(),
+                    size: size,
                   ),
-                  ItemContainerText(title: "Rarity:", text: fish.rarity),
-                  ItemContainerText(title: "Location:", text: fish.location),
+                  ItemContainerText(
+                    title: "Rarity:",
+                    text: fish.rarity,
+                    size: size,
+                  ),
+                  ItemContainerText(
+                    title: "Location:",
+                    text: fish.location,
+                    size: size,
+                  ),
                 ],
               ),
             ],

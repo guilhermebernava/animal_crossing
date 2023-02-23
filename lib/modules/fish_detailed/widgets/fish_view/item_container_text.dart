@@ -4,10 +4,13 @@ import 'package:flutter/material.dart';
 class ItemContainerText extends StatelessWidget {
   final String text;
   final String title;
+  final Size size;
+
   const ItemContainerText({
     super.key,
     required this.text,
     required this.title,
+    required this.size,
   });
 
   @override
@@ -21,10 +24,14 @@ class ItemContainerText extends StatelessWidget {
             textAlign: TextAlign.start,
             style: FishDetailedFonts.itemContainerTitle,
           ),
-          Text(
-            text,
-            textAlign: TextAlign.start,
-            style: FishDetailedFonts.itemContainerText,
+          SizedBox(
+            width: size.width * 0.2,
+            child: Text(
+              text,
+              textAlign: TextAlign.start,
+              style: FishDetailedFonts.itemContainerText,
+              overflow: TextOverflow.ellipsis,
+            ),
           ),
         ],
       ),

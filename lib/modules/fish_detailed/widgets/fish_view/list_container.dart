@@ -14,12 +14,15 @@ class ListContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: fishes.length,
-      shrinkWrap: true,
-      itemBuilder: (_, index) => ItemContainer(
-        fish: fishes[index],
-        size: size,
+    return SizedBox(
+      height: size.height * 0.9,
+      child: ListView.builder(
+        itemCount: fishes.length,
+        shrinkWrap: true,
+        itemBuilder: (_, index) => ItemContainer(
+          fish: fishes[index],
+          size: size,
+        ),
       ),
     );
   }
