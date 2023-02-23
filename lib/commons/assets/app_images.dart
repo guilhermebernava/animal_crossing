@@ -7,4 +7,5 @@ class AppImages {
   static const wallpaper = "assets/images/wallpaper.png";
   static const texture = "assets/images/texture.png";
   static const leaf = "assets/images/leaf.png";
+  static const backgroundFish = "assets/images/background_fish.png";
 }
