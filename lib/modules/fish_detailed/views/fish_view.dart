@@ -1,17 +1,15 @@
 import 'package:animal_crossing/commons/assets/app_images.dart';
 import 'package:animal_crossing/commons/design/app_colors.dart';
-import 'package:animal_crossing/modules/fish_detailed/domain/blocs/fish_bloc/fish_events.dart';
-import 'package:animal_crossing/modules/fish_detailed/domain/blocs/fish_bloc/fish_states.dart';
+import 'package:animal_crossing/modules/fish_detailed/domain/interfaces/use_cases/i_fish_use_case.dart';
 import 'package:animal_crossing/modules/fish_detailed/widgets/fish_view/fish_builder.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class FishView extends StatelessWidget {
-  final Bloc<FishEvents, FishStates> bloc;
+  final IFishUseCase useCase;
 
   const FishView({
     super.key,
-    required this.bloc,
+    required this.useCase,
   });
 
   @override
@@ -32,7 +30,7 @@ class FishView extends StatelessWidget {
           ),
         ),
         child: FishBuilder(
-          fishBloc: bloc,
+          useCase: useCase,
           size: size,
         ),
       ),

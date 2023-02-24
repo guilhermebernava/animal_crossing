@@ -17,7 +17,7 @@ void main() {
     mapper: FishMapper(),
     apiBase: apiBase,
   );
-
+  //TODO atualizar testes
   blocTest<FishBloc, FishStates>(
     'emits [Fishes] when have sucess getting fish by ID',
     build: () => FishBloc(
