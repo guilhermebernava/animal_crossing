@@ -8,4 +8,12 @@ class FishGetById implements FishEvents {
   });
 }
 
+class FishSearch implements FishEvents {
+  final String text;
+
+  FishSearch({
+    required this.text,
+  });
+}
+
 class FishGetAll implements FishEvents {}
