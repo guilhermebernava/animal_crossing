@@ -17,14 +17,24 @@ void main() {
     mapper: FishMapper(),
     apiBase: apiBase,
   );
-  //TODO atualizar testes
+
+  blocTest<FishBloc, FishStates>(
+    'emits [Fishes] when have sucess getting fish by ID',
+    build: () => FishBloc(
+      fishRepository: repository,
+    ),
+    act: (bloc) => bloc.add(FishSearch(text: "oar")),
+    expect: () => [isA<FishLoading>(), isA<Fishes>()],
+    wait: const Duration(seconds: 1),
+  );
+
   blocTest<FishBloc, FishStates>(
     'emits [Fishes] when have sucess getting fish by ID',
     build: () => FishBloc(
       fishRepository: repository,
     ),
     act: (bloc) => bloc.add(FishGetById(id: "1")),
-    expect: () => [isA<Fishes>()],
+    expect: () => [isA<FishLoading>(), isA<Fishes>()],
     wait: const Duration(seconds: 1),
   );
 
@@ -34,7 +44,7 @@ void main() {
       fishRepository: repository,
     ),
     act: (bloc) => bloc.add(FishGetAll()),
-    expect: () => [isA<Fishes>()],
+    expect: () => [isA<FishLoading>(), isA<Fishes>()],
     wait: const Duration(seconds: 1),
   );
 
@@ -44,7 +54,7 @@ void main() {
       fishRepository: repository,
     ),
     act: (bloc) => bloc.add(FishGetById(id: "2039818423842349239423904")),
-    expect: () => [],
+    expect: () => [isA<FishLoading>()],
     wait: const Duration(seconds: 2),
   );
 }
