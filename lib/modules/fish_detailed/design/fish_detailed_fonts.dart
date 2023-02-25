@@ -15,14 +15,25 @@ class FishDetailedFonts {
   );
 
   static final fishDetailedText = GoogleFonts.roboto(
-    fontSize: 18,
+    fontSize: 20,
     color: AppColors.black,
   );
 
   static final fishDetailedTitle = GoogleFonts.roboto(
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: FontWeight.bold,
     color: AppColors.black,
+  );
+
+  static final fishDetailedNameTitle = GoogleFonts.roboto(
+    fontSize: 28,
+    fontWeight: FontWeight.bold,
+    color: AppColors.white,
+  );
+
+  static final fishDetailedName = GoogleFonts.roboto(
+    fontSize: 28,
+    color: AppColors.white,
   );
 
   static final searchText = GoogleFonts.roboto(

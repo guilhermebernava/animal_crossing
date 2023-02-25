@@ -7,6 +7,10 @@ class AppImages {
   static const wallpaper = "assets/images/wallpaper.png";
   static const texture = "assets/images/texture.png";
   static const leaf = "assets/images/leaf.png";
-  static const backgroundFish2 = "assets/images/background_fish.jpg";
+  static const background2 = "assets/images/background_2.png";
+  static const moneyBag = "assets/images/money_bag.png";
+  static const shadow = "assets/images/shadow.png";
+  static const star = "assets/images/star.png";
+  static const house = "assets/images/house.png";
   static const backgroundFish = "assets/images/background_fish.png";
 }

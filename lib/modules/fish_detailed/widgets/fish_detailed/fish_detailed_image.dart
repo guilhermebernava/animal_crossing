@@ -13,11 +13,12 @@ class FishDetailedImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20),
+    return Container(
+      height: 100,
+      alignment: Alignment.center,
       child: Image.network(
         fish.imageUrl,
-        height: size.height * 0.17,
+        width: size.width,
         fit: BoxFit.cover,
       ),
     );
