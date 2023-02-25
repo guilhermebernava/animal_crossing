@@ -15,7 +15,7 @@ class ListContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: size.height * 0.82,
+      height: size.height * 0.75,
       child: ListView.builder(
         itemCount: fishes.length,
         shrinkWrap: true,

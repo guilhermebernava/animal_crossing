@@ -14,6 +14,17 @@ class FishDetailedFonts {
     color: AppColors.white,
   );
 
+  static final fishDetailedText = GoogleFonts.roboto(
+    fontSize: 18,
+    color: AppColors.black,
+  );
+
+  static final fishDetailedTitle = GoogleFonts.roboto(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+    color: AppColors.black,
+  );
+
   static final searchText = GoogleFonts.roboto(
     fontSize: 18,
     color: AppColors.black,

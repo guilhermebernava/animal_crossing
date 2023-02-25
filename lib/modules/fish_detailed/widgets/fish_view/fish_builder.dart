@@ -1,4 +1,6 @@
+import 'package:animal_crossing/commons/app_routes.dart';
 import 'package:animal_crossing/commons/widgets/loading_widget.dart';
+import 'package:animal_crossing/commons/widgets/transparent_app_bar_widget.dart';
 import 'package:animal_crossing/modules/fish_detailed/domain/blocs/fish_bloc/fish_events.dart';
 import 'package:animal_crossing/modules/fish_detailed/domain/blocs/fish_bloc/fish_states.dart';
 import 'package:animal_crossing/modules/fish_detailed/domain/interfaces/use_cases/i_fish_use_case.dart';
@@ -6,6 +8,7 @@ import 'package:animal_crossing/modules/fish_detailed/widgets/fish_view/list_con
 import 'package:animal_crossing/modules/fish_detailed/widgets/fish_view/search_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class FishBuilder extends StatefulWidget {
   final IFishUseCase useCase;
@@ -36,8 +39,10 @@ class _FishBuilderState extends State<FishBuilder> {
           if (state is Fishes) {
             return Column(
               children: [
-                const SizedBox(
-                  height: 40,
+                TransparentAppBarWidget(
+                  onTap: () => Modular.to.navigate(
+                    AppRoutes.homeModule,
+                  ),
                 ),
                 SearchInput(
                   controller: widget.useCase.searchController,

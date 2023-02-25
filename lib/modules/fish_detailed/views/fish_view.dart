@@ -1,5 +1,4 @@
 import 'package:animal_crossing/commons/assets/app_images.dart';
-import 'package:animal_crossing/commons/design/app_colors.dart';
 import 'package:animal_crossing/modules/fish_detailed/domain/interfaces/use_cases/i_fish_use_case.dart';
 import 'package:animal_crossing/modules/fish_detailed/widgets/fish_view/fish_builder.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +16,6 @@ class FishView extends StatelessWidget {
     final Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: AppColors.white,
       body: Container(
         width: size.width,
         height: size.height,

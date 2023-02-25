@@ -14,9 +14,9 @@ class SearchInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
-        bottom: 10,
         left: 20,
         right: 20,
+        bottom: 20,
       ),
       child: TextFormField(
         maxLines: 1,

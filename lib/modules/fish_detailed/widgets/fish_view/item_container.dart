@@ -23,7 +23,7 @@ class ItemContainer extends StatelessWidget {
         arguments: fish,
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 12.5, horizontal: 20),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         child: Container(
           height: size.height * 0.25,
           width: double.infinity,
@@ -46,7 +46,7 @@ class ItemContainer extends StatelessWidget {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(4.0),
             child: Row(
               children: [
                 Container(
