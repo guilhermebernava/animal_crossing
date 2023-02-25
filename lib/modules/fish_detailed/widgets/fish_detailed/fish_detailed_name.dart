@@ -16,10 +16,8 @@ class FishDetailedName extends StatelessWidget {
       decoration: const BoxDecoration(
         color: AppColors.blue,
         borderRadius: BorderRadius.only(
-          topRight: Radius.circular(30),
-          topLeft: Radius.circular(
-            30,
-          ),
+          topRight: Radius.circular(10),
+          topLeft: Radius.circular(10),
         ),
       ),
       width: double.infinity,
