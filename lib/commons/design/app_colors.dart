@@ -18,7 +18,7 @@ class AppColors {
   static const lightGreen = Color(0xffBCF8CB);
   static const green = Color.fromARGB(255, 78, 155, 110);
   static const green2 = Color(0xffA4D740);
-  static const blue = Color(0xff71B6F7);
+  static const blue = Color.fromARGB(255, 91, 142, 191);
   static const darkBlue = Color(0xff1A2938);
   static const lightPurple = Color(0xffDBB4F8);
   static const purple = Color(0xff9379C2);

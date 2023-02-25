@@ -36,14 +36,16 @@ class ItemContainer extends StatelessWidget {
                 offset: const Offset(1, 2),
               )
             ],
-            color: AppColors.blue,
+            gradient: const LinearGradient(
+              colors: [AppColors.darkBlue, AppColors.blue],
+              begin: Alignment.bottomRight,
+              end: Alignment.topLeft,
+            ),
             border: Border.all(
               color: AppColors.white,
-              width: 5,
+              width: 3.5,
             ),
-            borderRadius: BorderRadius.circular(
-              30,
-            ),
+            borderRadius: BorderRadius.circular(20),
           ),
           child: Padding(
             padding: const EdgeInsets.all(4.0),
