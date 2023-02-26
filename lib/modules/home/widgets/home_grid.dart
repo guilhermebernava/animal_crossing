@@ -7,11 +7,9 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 class HomeGrid extends StatelessWidget {
   final Size size;
+  final double topPadding;
 
-  const HomeGrid({
-    super.key,
-    required this.size,
-  });
+  const HomeGrid({super.key, required this.size, this.topPadding = 0.17});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +17,7 @@ class HomeGrid extends StatelessWidget {
       padding: EdgeInsets.only(
         left: 20,
         right: 20,
-        top: size.height * 0.17,
+        top: size.height * topPadding,
       ),
       child: GridView(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

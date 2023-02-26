@@ -5,10 +5,9 @@ import 'package:flutter/material.dart';
 
 class HomeLogo extends StatelessWidget {
   final Size size;
-  const HomeLogo({
-    super.key,
-    required this.size,
-  });
+  final double height;
+
+  const HomeLogo({super.key, required this.size, this.height = 0.15});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +17,7 @@ class HomeLogo extends StatelessWidget {
       ),
       child: SizedBox(
         width: size.width,
-        height: size.height * 0.15,
+        height: size.height * height,
         child: Padding(
           padding: const EdgeInsets.only(bottom: 10.0),
           child: Center(
