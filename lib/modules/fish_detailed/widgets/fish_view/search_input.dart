@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class SearchInput extends StatelessWidget {
   final TextEditingController controller;
-
+  //TODO create animation
   const SearchInput({
     super.key,
     required this.controller,

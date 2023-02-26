@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class ListContainer extends StatelessWidget {
   final Size size;
   final List<Fish> fishes;
-
+  //TODO create animation
   const ListContainer({
     super.key,
     required this.size,
