@@ -16,7 +16,7 @@ class FishDetailedColumn extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: SingleChildScrollView(
         child: Stack(
-          alignment: const Alignment(0, -1),
+          alignment: const Alignment(0, -1.05),
           children: children,
         ),
       ),

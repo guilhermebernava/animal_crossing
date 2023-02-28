@@ -16,6 +16,7 @@ class FishView extends StatelessWidget {
     final Size size = MediaQuery.of(context).size;
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Container(
         width: size.width,
         height: size.height,

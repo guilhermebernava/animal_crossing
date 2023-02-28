@@ -28,7 +28,7 @@ class FishDetailedFonts {
   static final fishDetailedNameTitle = GoogleFonts.roboto(
     fontSize: 28,
     fontWeight: FontWeight.bold,
-    color: AppColors.white,
+    color: AppColors.trueWhite,
   );
 
   static final fishDetailedName = GoogleFonts.roboto(

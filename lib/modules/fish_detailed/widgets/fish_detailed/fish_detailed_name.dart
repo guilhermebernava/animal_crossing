@@ -14,7 +14,11 @@ class FishDetailedName extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        color: AppColors.blue,
+        gradient: LinearGradient(
+          colors: [AppColors.blue, AppColors.lightBlue],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        ),
         borderRadius: BorderRadius.only(
           topRight: Radius.circular(10),
           topLeft: Radius.circular(10),
@@ -35,13 +39,13 @@ class FishDetailedName extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 5),
               child: Container(
                 height: 2,
-                color: AppColors.white,
+                color: AppColors.trueWhite,
                 width: 100,
               ),
             ),
             Text(
               fish.name.toUpperCase(),
-              style: FishDetailedFonts.fishDetailedName,
+              style: FishDetailedFonts.fishDetailedNameTitle,
             ),
           ],
         ),

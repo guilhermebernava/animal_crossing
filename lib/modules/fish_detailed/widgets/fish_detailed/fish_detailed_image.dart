@@ -13,14 +13,10 @@ class FishDetailedImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 100,
-      alignment: Alignment.center,
-      child: Image.network(
-        fish.imageUrl,
-        width: size.width,
-        fit: BoxFit.cover,
-      ),
+    return Image.network(
+      fish.imageUrl,
+      width: size.width,
+      fit: BoxFit.cover,
     );
   }
 }

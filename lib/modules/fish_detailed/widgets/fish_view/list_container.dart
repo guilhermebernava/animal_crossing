@@ -5,23 +5,28 @@ import 'package:flutter/material.dart';
 class ListContainer extends StatelessWidget {
   final Size size;
   final List<Fish> fishes;
-  //TODO create animation
+  final double paddingTop;
+
   const ListContainer({
     super.key,
     required this.size,
     required this.fishes,
+    this.paddingTop = 0,
   });
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: size.height * 0.75,
-      child: ListView.builder(
-        itemCount: fishes.length,
-        shrinkWrap: true,
-        itemBuilder: (_, index) => ItemContainer(
-          fish: fishes[index],
-          size: size,
+    return Padding(
+      padding: EdgeInsets.only(top: paddingTop),
+      child: SizedBox(
+        height: size.height * 0.75,
+        child: ListView.builder(
+          itemCount: fishes.length,
+          shrinkWrap: true,
+          itemBuilder: (_, index) => ItemContainer(
+            fish: fishes[index],
+            size: size,
+          ),
         ),
       ),
     );

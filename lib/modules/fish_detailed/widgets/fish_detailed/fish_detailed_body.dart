@@ -10,17 +10,19 @@ import 'package:flutter/material.dart';
 class FishDetailedBody extends StatelessWidget {
   final Size size;
   final Fish fish;
+  final double paddingTop;
 
   const FishDetailedBody({
     super.key,
     required this.fish,
     required this.size,
+    this.paddingTop = 150,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 110),
+      padding: EdgeInsets.symmetric(vertical: paddingTop),
       child: Container(
         decoration: BoxDecoration(
           color: AppColors.white,
