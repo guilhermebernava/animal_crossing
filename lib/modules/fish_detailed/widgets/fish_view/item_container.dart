@@ -1,3 +1,5 @@
+import 'dart:ui';
+import 'package:animal_crossing/commons/assets/app_images.dart';
 import 'package:animal_crossing/commons/design/app_colors.dart';
 import 'package:animal_crossing/modules/fish_detailed/domain/entities/fish.dart';
 import 'package:animal_crossing/modules/fish_detailed/views/fish_detailed.dart';
@@ -28,6 +30,14 @@ class ItemContainer extends StatelessWidget {
           height: size.height * 0.25,
           width: double.infinity,
           decoration: BoxDecoration(
+            image: const DecorationImage(
+              image: AssetImage(
+                AppImages.fishPattern,
+              ),
+              repeat: ImageRepeat.repeatX,
+              opacity: 0.6,
+              invertColors: true,
+            ),
             boxShadow: [
               BoxShadow(
                 color: AppColors.black.withOpacity(0.3),
@@ -47,56 +57,62 @@ class ItemContainer extends StatelessWidget {
             ),
             borderRadius: BorderRadius.circular(20),
           ),
-          child: Padding(
-            padding: const EdgeInsets.all(4.0),
-            child: Row(
-              children: [
-                Container(
-                  width: 110,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage(
-                        fish.iconUrl,
-                        scale: 0.4,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 0.5, sigmaY: 0.5),
+              child: Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 110,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: NetworkImage(
+                            fish.iconUrl,
+                            scale: 0.4,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 30, left: 10),
-                  child: Container(
-                    height: size.height * 0.16,
-                    width: 2,
-                    color: AppColors.white,
-                  ),
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ItemContainerText(
-                      text: fish.name,
-                      title: "Name:",
-                      size: size,
+                    Padding(
+                      padding: const EdgeInsets.only(right: 30, left: 10),
+                      child: Container(
+                        height: size.height * 0.16,
+                        width: 2,
+                        color: AppColors.white,
+                      ),
                     ),
-                    ItemContainerText(
-                      title: "Price:",
-                      text: fish.price.toString(),
-                      size: size,
-                    ),
-                    ItemContainerText(
-                      title: "Rarity:",
-                      text: fish.rarity,
-                      size: size,
-                    ),
-                    ItemContainerText(
-                      title: "Location:",
-                      text: fish.location,
-                      size: size,
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ItemContainerText(
+                          text: fish.name,
+                          title: "Name:",
+                          size: size,
+                        ),
+                        ItemContainerText(
+                          title: "Price:",
+                          text: fish.price.toString(),
+                          size: size,
+                        ),
+                        ItemContainerText(
+                          title: "Rarity:",
+                          text: fish.rarity,
+                          size: size,
+                        ),
+                        ItemContainerText(
+                          title: "Location:",
+                          text: fish.location,
+                          size: size,
+                        ),
+                      ],
                     ),
                   ],
                 ),
-              ],
+              ),
             ),
           ),
         ),

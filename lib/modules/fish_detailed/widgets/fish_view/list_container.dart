@@ -19,7 +19,7 @@ class ListContainer extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(top: paddingTop),
       child: SizedBox(
-        height: size.height * 0.75,
+        height: size.height * 0.76,
         child: ListView.builder(
           itemCount: fishes.length,
           shrinkWrap: true,

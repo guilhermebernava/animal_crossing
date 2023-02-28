@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 class SearchInput extends StatelessWidget {
   final TextEditingController controller;
-  //TODO create animation
   const SearchInput({
     super.key,
     required this.controller,
@@ -16,7 +15,7 @@ class SearchInput extends StatelessWidget {
       padding: const EdgeInsets.only(
         left: 20,
         right: 20,
-        bottom: 20,
+        bottom: 10,
       ),
       child: TextFormField(
         maxLines: 1,

@@ -20,7 +20,7 @@ class HomeBody extends StatelessWidget {
           opacity: 0.3,
           repeat: ImageRepeat.repeatY,
           image: AssetImage(
-            AppImages.texture,
+            AppImages.leafPattern,
           ),
         ),
       ),

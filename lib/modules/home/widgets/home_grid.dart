@@ -39,7 +39,7 @@ class HomeGrid extends StatelessWidget {
             onTap: () {},
           ),
           HomeContainer(
-            color: AppColors.blue,
+            color: AppColors.blue.withAlpha(244),
             image: AppImages.seaCreatures,
             size: size,
             onTap: () {},

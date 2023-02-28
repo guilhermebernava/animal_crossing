@@ -39,9 +39,15 @@ class _FishBuilderState extends State<FishBuilder> {
           if (state is Fishes) {
             return Column(
               children: [
-                TransparentAppBarWidget(
-                  onTap: () => Modular.to.navigate(
-                    AppRoutes.homeModule,
+                const SizedBox(
+                  height: 8,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 4),
+                  child: TransparentAppBarWidget(
+                    onTap: () => Modular.to.navigate(
+                      AppRoutes.homeModule,
+                    ),
                   ),
                 ),
                 SearchInput(

@@ -19,7 +19,7 @@ class FishDetailedBackground extends StatelessWidget {
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
-            AppImages.background2,
+            AppImages.backgroundWater,
           ),
           fit: BoxFit.fill,
           opacity: 0.7,

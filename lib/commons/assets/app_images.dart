@@ -1,16 +1,25 @@
 class AppImages {
-  static const backgroundSplash = "assets/images/background_splash.jpeg";
-  static const logo = "assets/images/logo.png";
-  static const fish = "assets/images/fish.png";
-  static const bug = "assets/images/bugs.png";
-  static const seaCreatures = "assets/images/sea_creatures.png";
-  static const wallpaper = "assets/images/wallpaper.png";
-  static const texture = "assets/images/texture.png";
-  static const leaf = "assets/images/leaf.png";
-  static const background2 = "assets/images/background_2.png";
-  static const moneyBag = "assets/images/money_bag.png";
-  static const shadow = "assets/images/shadow.png";
-  static const star = "assets/images/star.png";
-  static const house = "assets/images/house.png";
-  static const backgroundFish = "assets/images/background_fish.png";
+  //BACKGROUNDS
+  static const backgroundSplash =
+      "assets/images/backgrounds/background_splash.jpeg";
+  static const backgroundFish = "assets/images/backgrounds/background_fish.png";
+  static const backgroundWater =
+      "assets/images/backgrounds/background_water.png";
+
+  //ICONS
+  static const fish = "assets/images/icons/fish.png";
+  static const bug = "assets/images/icons/bug.png";
+  static const house = "assets/images/icons/house.png";
+  static const leaf = "assets/images/icons/leaf.png";
+  static const moneyBag = "assets/images/icons/money_bag.png";
+  static const seaCreatures = "assets/images/icons/sea_creature.png";
+  static const shadow = "assets/images/icons/shadow.png";
+  static const star = "assets/images/icons/star.png";
+
+  //PATTERNS
+  static const fishPattern = "assets/images/patterns/fish_pattern.png";
+  static const leafPattern = "assets/images/patterns/leaf_pattern.png";
+
+  //LOGOS
+  static const logo = "assets/images/logos/animal_crossing.png";
 }
