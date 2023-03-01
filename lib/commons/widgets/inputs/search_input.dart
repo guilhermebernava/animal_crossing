@@ -1,5 +1,5 @@
 import 'package:animal_crossing/commons/design/app_colors.dart';
-import 'package:animal_crossing/modules/fish_detailed/design/fish_detailed_fonts.dart';
+import 'package:animal_crossing/commons/design/app_fonts.dart';
 import 'package:flutter/material.dart';
 
 class SearchInput extends StatelessWidget {
@@ -20,12 +20,12 @@ class SearchInput extends StatelessWidget {
       child: TextFormField(
         maxLines: 1,
         textInputAction: TextInputAction.done,
-        style: FishDetailedFonts.searchText,
+        style: AppFonts.searchText,
         controller: controller,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         decoration: InputDecoration(
-          counterStyle: FishDetailedFonts.searchText,
-          errorStyle: FishDetailedFonts.searchError,
+          counterStyle: AppFonts.searchText,
+          errorStyle: AppFonts.searchError,
           focusedBorder: OutlineInputBorder(
             borderSide: const BorderSide(
               width: 4,

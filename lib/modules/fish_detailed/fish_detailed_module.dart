@@ -1,8 +1,8 @@
 import 'package:animal_crossing/commons/api/api_endpoints.dart';
 import 'package:animal_crossing/modules/fish_detailed/domain/blocs/fish_bloc/fish_bloc.dart';
 import 'package:animal_crossing/modules/fish_detailed/domain/use_cases/fish_use_case.dart';
-import 'package:animal_crossing/modules/fish_detailed/repositories/fish_repository.dart';
-import 'package:animal_crossing/modules/fish_detailed/repositories/mappers/fish_mapper.dart';
+import 'package:animal_crossing/modules/fish_detailed/infra/repositories/fish_repository.dart';
+import 'package:animal_crossing/modules/fish_detailed/infra/mappers/fish_mapper.dart';
 import 'package:animal_crossing/modules/fish_detailed/views/fish_detailed.dart';
 import 'package:animal_crossing/modules/fish_detailed/views/fish_view.dart';
 import 'package:flutter_modular/flutter_modular.dart';

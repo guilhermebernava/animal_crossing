@@ -35,14 +35,4 @@ class FishDetailedFonts {
     fontSize: 28,
     color: AppColors.white,
   );
-
-  static final searchText = GoogleFonts.roboto(
-    fontSize: 18,
-    color: AppColors.black,
-  );
-
-  static final searchError = GoogleFonts.roboto(
-    fontSize: 16,
-    color: Colors.red,
-  );
 }

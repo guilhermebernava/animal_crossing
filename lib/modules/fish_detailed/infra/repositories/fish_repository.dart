@@ -22,35 +22,53 @@ class FishRepository implements IFishRepository {
 
   @override
   Future<Either<ApiException, List<Fish>>> getAllFishs() async {
-    final response = await apiBase.get(endpoint: endpoint);
+    try {
+      final response = await apiBase.get(endpoint: endpoint);
 
-    if (response.isLeft()) {
+      if (response.isLeft()) {
+        return Left(
+          response.left(),
+        );
+      }
+
+      return Right(
+        mapper.fromMaps(
+          response.right(),
+        ),
+      );
+    } catch (e) {
       return Left(
-        response.left(),
+        ApiException(
+          endpoint: endpoint,
+          message: e.toString(),
+        ),
       );
     }
-
-    return Right(
-      mapper.fromMaps(
-        response.right(),
-      ),
-    );
   }
 
   @override
   Future<Either<ApiException, Fish>> getFishById(String id) async {
-    final response = await apiBase.get(endpoint: '$endpoint/$id');
+    try {
+      final response = await apiBase.get(endpoint: '$endpoint/$id');
 
-    if (response.isLeft()) {
+      if (response.isLeft()) {
+        return Left(
+          response.left(),
+        );
+      }
+
+      return Right(
+        mapper.fromMap(
+          response.right(),
+        ),
+      );
+    } catch (e) {
       return Left(
-        response.left(),
+        ApiException(
+          endpoint: endpoint,
+          message: e.toString(),
+        ),
       );
     }
-
-    return Right(
-      mapper.fromMap(
-        response.right(),
-      ),
-    );
   }
 }

@@ -1,8 +1,9 @@
 import 'package:animal_crossing/commons/api/api_base.dart';
+import 'package:animal_crossing/commons/api/api_endpoints.dart';
 import 'package:animal_crossing/commons/extensions/dartz_extensions.dart';
 import 'package:animal_crossing/modules/fish_detailed/domain/entities/fish.dart';
-import 'package:animal_crossing/modules/fish_detailed/repositories/fish_repository.dart';
-import 'package:animal_crossing/modules/fish_detailed/repositories/mappers/fish_mapper.dart';
+import 'package:animal_crossing/modules/fish_detailed/infra/repositories/fish_repository.dart';
+import 'package:animal_crossing/modules/fish_detailed/infra/mappers/fish_mapper.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -11,7 +12,7 @@ void main() {
   );
 
   final repository = FishRepository(
-    endpoint: "fish",
+    endpoint: ApiEndpoints.fishEndpoint,
     mapper: FishMapper(),
     apiBase: apiBase,
   );

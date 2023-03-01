@@ -2,8 +2,8 @@ import 'package:animal_crossing/commons/api/api_base.dart';
 import 'package:animal_crossing/modules/fish_detailed/domain/blocs/fish_bloc/fish_bloc.dart';
 import 'package:animal_crossing/modules/fish_detailed/domain/blocs/fish_bloc/fish_events.dart';
 import 'package:animal_crossing/modules/fish_detailed/domain/blocs/fish_bloc/fish_states.dart';
-import 'package:animal_crossing/modules/fish_detailed/repositories/fish_repository.dart';
-import 'package:animal_crossing/modules/fish_detailed/repositories/mappers/fish_mapper.dart';
+import 'package:animal_crossing/modules/fish_detailed/infra/repositories/fish_repository.dart';
+import 'package:animal_crossing/modules/fish_detailed/infra/mappers/fish_mapper.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 
