@@ -1,4 +1,6 @@
 import 'package:animal_crossing/commons/app_routes.dart';
+import 'package:animal_crossing/commons/assets/app_images.dart';
+import 'package:animal_crossing/commons/design/app_colors.dart';
 import 'package:animal_crossing/commons/widgets/app_bar/transparent_app_bar_widget.dart';
 import 'package:animal_crossing/commons/widgets/inputs/search_input.dart';
 import 'package:animal_crossing/commons/widgets/loading_widget.dart';
@@ -35,28 +37,42 @@ class _BugViewState extends State<BugView> {
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: BlocBuilder(
-        bloc: widget.useCase.bugBloc,
-        builder: (_, state) {
-          if (state is Bugs) {
-            return BugBody(
-              size: size,
-              children: [
-                TransparentAppBarWidget(
-                  onTap: () => Modular.to.navigate(AppRoutes.homeModule),
-                ),
-                SearchInput(
-                  controller: widget.useCase.searchController,
-                ),
-                BugGridAnimation(
-                  size: size,
-                  bugs: state.bugs,
-                )
-              ],
-            );
-          }
-          return const LoadingWidget();
-        },
+      body: Container(
+        width: size.width,
+        height: size.height,
+        decoration: BoxDecoration(
+          color: AppColors.green.withOpacity(0.8),
+          image: const DecorationImage(
+            image: AssetImage(
+              AppImages.bugPattern,
+            ),
+            repeat: ImageRepeat.repeatY,
+            opacity: 0.32,
+          ),
+        ),
+        child: BlocBuilder(
+          bloc: widget.useCase.bugBloc,
+          builder: (_, state) {
+            if (state is Bugs) {
+              return BugBody(
+                size: size,
+                children: [
+                  TransparentAppBarWidget(
+                    onTap: () => Modular.to.navigate(AppRoutes.homeModule),
+                  ),
+                  SearchInput(
+                    controller: widget.useCase.searchController,
+                  ),
+                  BugGridAnimation(
+                    size: size,
+                    bugs: state.bugs,
+                  )
+                ],
+              );
+            }
+            return const LoadingWidget();
+          },
+        ),
       ),
     );
   }

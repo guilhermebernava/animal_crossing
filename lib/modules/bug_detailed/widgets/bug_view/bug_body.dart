@@ -14,28 +14,14 @@ class BugBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: size.width,
-      height: size.height,
-      decoration: BoxDecoration(
-        color: AppColors.green.withOpacity(0.8),
-        image: const DecorationImage(
-          image: AssetImage(
-            AppImages.bugPattern,
-          ),
-          repeat: ImageRepeat.repeatY,
-          opacity: 0.32,
+    return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          vertical: 10,
         ),
-      ),
-      child: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            vertical: 10,
-          ),
-          child: Column(
-            children: children,
-          ),
+        child: Column(
+          children: children,
         ),
       ),
     );
