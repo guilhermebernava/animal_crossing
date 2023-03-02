@@ -1,8 +1,11 @@
 import 'package:animal_crossing/modules/bug_detailed/domain/blocs/bug_bloc/bug_states.dart';
 import 'package:animal_crossing/modules/bug_detailed/domain/blocs/bug_bloc/bug_events.dart';
+import 'package:animal_crossing/modules/bug_detailed/domain/entities/bug.dart';
 import 'package:animal_crossing/modules/bug_detailed/domain/interfaces/use_cases/bug_use_case.dart';
+import 'package:animal_crossing/modules/bug_detailed/views/bug_detailed_view.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class BugUseCase implements IBugUseCase {
   @override
@@ -12,20 +15,27 @@ class BugUseCase implements IBugUseCase {
 
   BugUseCase({
     required this.bugBloc,
-  });
-
-  @override
-  void clear() {
-    // TODO: implement clear
+  }) {
+    searchController.addListener(search);
   }
 
   @override
+  void clear() => bugBloc.add(GetAllBugs());
+
+  @override
   void dispose() {
-    // TODO: implement dispose
+    searchController.removeListener(search);
+    searchController.dispose();
   }
 
   @override
   void search() {
-    // TODO: implement search
+    bugBloc.add(SearchBug(text: searchController.text));
   }
+
+  @override
+  void toDetail(Bug bug) => Modular.to.pushNamed(
+        ".${BugDetailedView.route}",
+        arguments: bug,
+      );
 }

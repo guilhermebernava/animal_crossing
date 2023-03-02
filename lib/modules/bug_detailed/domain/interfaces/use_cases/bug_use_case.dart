@@ -1,5 +1,6 @@
 import 'package:animal_crossing/modules/bug_detailed/domain/blocs/bug_bloc/bug_events.dart';
 import 'package:animal_crossing/modules/bug_detailed/domain/blocs/bug_bloc/bug_states.dart';
+import 'package:animal_crossing/modules/bug_detailed/domain/entities/bug.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -15,4 +16,5 @@ abstract class IBugUseCase implements Disposable {
 
   void search();
   void clear();
+  void toDetail(Bug bug);
 }

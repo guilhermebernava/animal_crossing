@@ -36,7 +36,7 @@ class HomeGrid extends StatelessWidget {
             color: AppColors.green2,
             image: AppImages.bug,
             size: size,
-            onTap: () {},
+            onTap: () => Modular.to.navigate(AppRoutes.bugDetailed),
           ),
           HomeContainer(
             color: AppColors.blue.withAlpha(244),

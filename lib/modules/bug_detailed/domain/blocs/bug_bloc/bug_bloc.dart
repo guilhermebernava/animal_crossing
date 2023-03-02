@@ -12,7 +12,14 @@ class BugBloc extends Bloc<BugEvents, BugStates> {
   BugBloc({
     required this.bugRepository,
   }) : super(BugLoading()) {
-    //TODO adicionar EVENTOS ao BLOC
+    on<SearchBug>((event, emit) async {
+      emit(BugLoading());
+      final filtredBugs =
+          bugs.where((element) => element.name == event.text).toList();
+
+      emit(Bugs(bugs: filtredBugs));
+    });
+
     on<GetAllBugs>(
       (event, emit) async {
         emit(BugLoading());
@@ -33,5 +40,24 @@ class BugBloc extends Bloc<BugEvents, BugStates> {
         emit(Bugs(bugs: result.right()));
       },
     );
+
+    on<GetBugById>((event, emit) async {
+      emit(BugLoading());
+      final result = await bugRepository.getById(event.id);
+
+      if (result.isLeft()) {
+        emit(
+          BugError(
+            error: result.left().message,
+          ),
+        );
+        return;
+      }
+
+      bugs.clear();
+      bugs.addAll([result.right()]);
+
+      emit(Bugs(bugs: [result.right()]));
+    });
   }
 }
