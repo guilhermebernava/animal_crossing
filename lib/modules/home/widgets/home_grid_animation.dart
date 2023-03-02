@@ -1,3 +1,7 @@
+import 'package:animal_crossing/commons/app_routes.dart';
+import 'package:animal_crossing/commons/assets/app_images.dart';
+import 'package:animal_crossing/commons/design/app_colors.dart';
+import 'package:animal_crossing/modules/home/domain/entities/home_grid_item.dart';
 import 'package:animal_crossing/modules/home/widgets/home_grid.dart';
 import 'package:flutter/widgets.dart';
 
@@ -16,31 +20,15 @@ class _HomeGridAnimationState extends State<HomeGridAnimation>
     with TickerProviderStateMixin {
   bool canAnimate = false;
 
-  late final AnimationController controller;
-  late final Animation<double> animation;
-
   @override
   void initState() {
     super.initState();
-
-    controller = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 1200));
-
-    animation = Tween(begin: 0.25, end: 0.17)
-        .animate(CurvedAnimation(parent: controller, curve: Curves.decelerate));
 
     Future.delayed(const Duration(milliseconds: 300), () {
       setState(() {
         canAnimate = true;
       });
-      controller.forward();
     });
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    controller.dispose();
   }
 
   @override
@@ -48,12 +36,25 @@ class _HomeGridAnimationState extends State<HomeGridAnimation>
     return AnimatedOpacity(
       duration: const Duration(seconds: 1),
       opacity: canAnimate ? 1.0 : 0.0,
-      child: AnimatedBuilder(
-        animation: animation,
-        builder: (_, __) => HomeGrid(
-          size: widget.size,
-          topPadding: animation.value,
-        ),
+      child: HomeGrid(
+        size: widget.size,
+        itens: [
+          HomeGridItem(
+            color: AppColors.lightBlue,
+            image: AppImages.fish,
+            route: AppRoutes.fishDetailed,
+          ),
+          HomeGridItem(
+            color: AppColors.green2,
+            image: AppImages.bug,
+            route: AppRoutes.bugDetailed,
+          ),
+          HomeGridItem(
+            color: AppColors.blue,
+            image: AppImages.seaCreatures,
+            route: AppRoutes.seaMonsterDetailed,
+          )
+        ],
       ),
     );
   }

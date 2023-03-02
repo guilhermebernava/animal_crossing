@@ -30,7 +30,9 @@ class BugUseCase implements IBugUseCase {
 
   @override
   void search() {
-    bugBloc.add(SearchBug(text: searchController.text));
+    if (searchController.text != "") {
+      bugBloc.add(SearchBug(text: searchController.text));
+    }
   }
 
   @override

@@ -15,7 +15,7 @@ class BugBloc extends Bloc<BugEvents, BugStates> {
     on<SearchBug>((event, emit) async {
       emit(BugLoading());
       final filtredBugs =
-          bugs.where((element) => element.name == event.text).toList();
+          bugs.where((element) => element.name.contains(event.text)).toList();
 
       emit(Bugs(bugs: filtredBugs));
     });

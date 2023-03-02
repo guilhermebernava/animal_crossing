@@ -26,8 +26,8 @@ class _ListContainerAnimationState extends State<ListContainerAnimation>
   void initState() {
     super.initState();
 
-    controller =
-        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    controller = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 300));
 
     animation = Tween(begin: 10.0, end: 0.0).animate(
       CurvedAnimation(
@@ -53,7 +53,7 @@ class _ListContainerAnimationState extends State<ListContainerAnimation>
   @override
   Widget build(BuildContext context) {
     return AnimatedOpacity(
-      duration: const Duration(seconds: 1),
+      duration: const Duration(milliseconds: 300),
       opacity: canAnimate ? 1.0 : 0,
       child: AnimatedBuilder(
         animation: animation,

@@ -1,6 +1,7 @@
 import 'package:animal_crossing/modules/fish_detailed/domain/entities/fish.dart';
 import 'package:animal_crossing/modules/fish_detailed/widgets/fish_view/item_container.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 class ListContainer extends StatelessWidget {
   final Size size;
@@ -23,9 +24,14 @@ class ListContainer extends StatelessWidget {
         child: ListView.builder(
           itemCount: fishes.length,
           shrinkWrap: true,
-          itemBuilder: (_, index) => ItemContainer(
-            fish: fishes[index],
-            size: size,
+          itemBuilder: (_, index) => AnimationConfiguration.staggeredList(
+            position: index,
+            child: ScaleAnimation(
+              child: ItemContainer(
+                fish: fishes[index],
+                size: size,
+              ),
+            ),
           ),
         ),
       ),
