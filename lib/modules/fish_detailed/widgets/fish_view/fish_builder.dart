@@ -45,9 +45,7 @@ class _FishBuilderState extends State<FishBuilder> {
                 Padding(
                   padding: const EdgeInsets.only(left: 4),
                   child: TransparentAppBarWidget(
-                    onTap: () => Modular.to.navigate(
-                      AppRoutes.homeModule,
-                    ),
+                    onTap: () => Modular.to.navigate(AppRoutes.homeModule),
                   ),
                 ),
                 SearchInput(

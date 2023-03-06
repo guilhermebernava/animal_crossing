@@ -23,12 +23,6 @@ class BugUseCase implements IBugUseCase {
   void clear() => bugBloc.add(GetAllBugs());
 
   @override
-  void dispose() {
-    searchController.removeListener(search);
-    searchController.dispose();
-  }
-
-  @override
   void search() {
     if (searchController.text != "") {
       bugBloc.add(SearchBug(text: searchController.text));

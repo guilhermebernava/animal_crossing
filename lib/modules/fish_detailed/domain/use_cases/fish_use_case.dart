@@ -26,10 +26,4 @@ class FishUseCase implements IFishUseCase {
       fishBloc.add(FishSearch(text: searchController.text));
     }
   }
-
-  @override
-  void dispose() {
-    searchController.removeListener(search);
-    searchController.dispose();
-  }
 }

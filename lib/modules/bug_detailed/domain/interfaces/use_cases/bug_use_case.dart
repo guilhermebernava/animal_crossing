@@ -3,9 +3,8 @@ import 'package:animal_crossing/modules/bug_detailed/domain/blocs/bug_bloc/bug_s
 import 'package:animal_crossing/modules/bug_detailed/domain/entities/bug.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 
-abstract class IBugUseCase implements Disposable {
+abstract class IBugUseCase {
   final Bloc<BugEvents, BugStates> bugBloc;
   final TextEditingController searchController;
 

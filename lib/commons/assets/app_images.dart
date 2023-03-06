@@ -20,6 +20,7 @@ class AppImages {
   static const fishPattern = "assets/images/patterns/fish_pattern.png";
   static const leafPattern = "assets/images/patterns/leaf_pattern.png";
   static const bugPattern = "assets/images/patterns/bug_pattern.png";
+  static const dotsPattern = "assets/images/patterns/dots_pattern.png";
 
   //LOGOS
   static const logo = "assets/images/logos/animal_crossing.png";

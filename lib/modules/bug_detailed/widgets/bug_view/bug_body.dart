@@ -1,5 +1,3 @@
-import 'package:animal_crossing/commons/assets/app_images.dart';
-import 'package:animal_crossing/commons/design/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class BugBody extends StatelessWidget {

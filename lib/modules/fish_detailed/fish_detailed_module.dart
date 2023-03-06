@@ -23,7 +23,9 @@ class FishDetailedModule extends Module {
             fishRepository: i.get(),
           ),
         ),
-        Bind((i) => FishUseCase(), onDispose: (val) => dispose()),
+        Bind(
+          (i) => FishUseCase(),
+        ),
       ];
   @override
   List<ModularRoute> get routes => [
