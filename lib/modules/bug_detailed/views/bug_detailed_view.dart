@@ -1,5 +1,5 @@
-import 'package:animal_crossing/commons/widgets/app_bar/transparent_app_bar_widget.dart';
 import 'package:animal_crossing/modules/bug_detailed/domain/entities/bug.dart';
+import 'package:animal_crossing/modules/bug_detailed/widgets/bug_detailed_view/bug_detailed_body.dart';
 import 'package:flutter/material.dart';
 
 class BugDetailedView extends StatelessWidget {
@@ -10,18 +10,15 @@ class BugDetailedView extends StatelessWidget {
     required this.bug,
   });
 
-  static const route = "/bug-detailed";
+  static const route = "/bug_details";
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Column(
-        children: const [
-          SizedBox(
-            height: 25,
-          ),
-          TransparentAppBarWidget(),
-        ],
+      body: BugDetailedBody(
+        bug: bug,
+        size: size,
       ),
     );
   }

@@ -5,6 +5,8 @@ class AppImages {
   static const backgroundFish = "assets/images/backgrounds/background_fish.png";
   static const backgroundWater =
       "assets/images/backgrounds/background_water.png";
+  static const backgroundJungle =
+      "assets/images/backgrounds/background_jungle.jpg";
 
   //ICONS
   static const fish = "assets/images/icons/fish.png";

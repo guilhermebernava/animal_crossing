@@ -1,19 +1,19 @@
 import 'package:animal_crossing/commons/assets/app_images.dart';
 import 'package:animal_crossing/commons/design/app_colors.dart';
-import 'package:animal_crossing/modules/fish_detailed/domain/entities/fish.dart';
-import 'package:animal_crossing/modules/fish_detailed/widgets/fish_detailed/fish_detailed_name.dart';
-import 'package:animal_crossing/modules/fish_detailed/widgets/fish_detailed/fish_detailed_text.dart';
-import 'package:animal_crossing/modules/fish_detailed/widgets/fish_detailed/fish_price_rarity.dart';
-import 'package:animal_crossing/modules/fish_detailed/widgets/fish_detailed/fish_text_divider.dart';
+import 'package:animal_crossing/modules/bug_detailed/domain/entities/bug.dart';
+import 'package:animal_crossing/modules/bug_detailed/widgets/bug_detailed_view/bug_detailed_name.dart';
+import 'package:animal_crossing/modules/bug_detailed/widgets/bug_detailed_view/bug_detailed_text.dart';
+import 'package:animal_crossing/modules/bug_detailed/widgets/bug_detailed_view/bug_price_rarity.dart';
+import 'package:animal_crossing/modules/bug_detailed/widgets/bug_detailed_view/bug_text_divider.dart';
 import 'package:flutter/material.dart';
 
-class FishDetailedBody extends StatelessWidget {
+class BugDetails extends StatelessWidget {
   final Size size;
-  final Fish fish;
+  final Bug bug;
 
-  const FishDetailedBody({
+  const BugDetails({
     super.key,
-    required this.fish,
+    required this.bug,
     required this.size,
   });
 
@@ -33,31 +33,25 @@ class FishDetailedBody extends StatelessWidget {
                 const SizedBox(
                   height: 100,
                 ),
-                FishPriceRarity(
-                  fish: fish,
+                BugPriceRarity(
+                  bug: bug,
                   size: size,
                 ),
-                FishDetailedText(
-                  text: fish.typeShadow,
-                  asset: AppImages.shadow,
-                  title: "Shadow",
-                  size: size,
-                ),
-                FishDetailedText(
-                  text: fish.location,
+                BugDetailedText(
+                  text: bug.location,
                   asset: AppImages.house,
                   title: "Location",
                   size: size,
                 ),
-                const FishTextDivider(),
-                FishDetailedText(
-                  text: fish.catchPhrase,
+                const BugTextDivider(),
+                BugDetailedText(
+                  text: bug.catchPhrase,
                   textAlign: TextAlign.justify,
                   title: "Catch Phrase",
                   size: size,
                 ),
-                FishDetailedText(
-                  text: fish.description,
+                BugDetailedText(
+                  text: bug.description,
                   title: "Description",
                   textAlign: TextAlign.justify,
                   size: size,
@@ -68,8 +62,8 @@ class FishDetailedBody extends StatelessWidget {
               ],
             ),
           ),
-          FishDetailedName(
-            fish: fish,
+          BugDetailedName(
+            bug: bug,
           ),
         ],
       ),

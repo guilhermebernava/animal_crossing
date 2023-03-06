@@ -8,4 +8,26 @@ class BugFonts {
     fontSize: 16,
     fontWeight: FontWeight.bold,
   );
+
+  static final bugDetailedText = GoogleFonts.roboto(
+    fontSize: 20,
+    color: AppColors.black,
+  );
+
+  static final bugDetailedTitle = GoogleFonts.roboto(
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+    color: AppColors.black,
+  );
+
+  static final bugDetailedNameTitle = GoogleFonts.roboto(
+    fontSize: 28,
+    fontWeight: FontWeight.bold,
+    color: AppColors.trueWhite,
+  );
+
+  static final bugDetailedName = GoogleFonts.roboto(
+    fontSize: 28,
+    color: AppColors.white,
+  );
 }

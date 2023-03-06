@@ -1,8 +1,9 @@
 import 'package:animal_crossing/commons/design/app_colors.dart';
 import 'package:animal_crossing/commons/widgets/app_bar/transparent_app_bar.dart';
+import 'package:animal_crossing/commons/widgets_animations/to_up_animation.dart';
 import 'package:animal_crossing/modules/fish_detailed/domain/entities/fish.dart';
 import 'package:animal_crossing/modules/fish_detailed/widgets/fish_detailed/fish_detailed_background.dart';
-import 'package:animal_crossing/modules/fish_detailed/widgets/fish_detailed/fish_detailed_body_animation.dart';
+import 'package:animal_crossing/modules/fish_detailed/widgets/fish_detailed/fish_detailed_body.dart';
 import 'package:animal_crossing/modules/fish_detailed/widgets/fish_detailed/fish_detailed_column.dart';
 import 'package:animal_crossing/modules/fish_detailed/widgets/fish_detailed/fish_detailed_image.dart';
 import 'package:flutter/material.dart';
@@ -33,9 +34,12 @@ class FishDetailed extends StatelessWidget {
         child: FishDetailedColumn(
           size: size,
           children: [
-            FishDetailedBodyAnimation(
-              fish: fish,
+            ToUpAnimation(
               size: size,
+              child: FishDetailedBody(
+                fish: fish,
+                size: size,
+              ),
             ),
             FishDetailedImage(
               fish: fish,
