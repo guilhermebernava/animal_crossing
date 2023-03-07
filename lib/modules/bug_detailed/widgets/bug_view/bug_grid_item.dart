@@ -21,7 +21,9 @@ class BugGridItem extends StatelessWidget {
         arguments: bug,
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 5),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 5,
+        ),
         child: Container(
           decoration: BoxDecoration(
             boxShadow: [
@@ -43,16 +45,14 @@ class BugGridItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 20,
-            ),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Image.network(
                   bug.iconUrl,
-                  scale: 1.35,
+                  scale: 1.5,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 10),

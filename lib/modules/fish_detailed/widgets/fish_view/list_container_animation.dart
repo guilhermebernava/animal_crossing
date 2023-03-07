@@ -29,7 +29,7 @@ class _ListContainerAnimationState extends State<ListContainerAnimation>
     controller = AnimationController(
         vsync: this, duration: const Duration(milliseconds: 300));
 
-    animation = Tween(begin: 10.0, end: 0.0).animate(
+    animation = Tween(begin: 1.0, end: 0.0).animate(
       CurvedAnimation(
         parent: controller,
         curve: Curves.decelerate,

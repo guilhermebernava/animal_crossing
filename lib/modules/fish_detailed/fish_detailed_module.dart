@@ -1,4 +1,5 @@
 import 'package:animal_crossing/commons/api/api_endpoints.dart';
+import 'package:animal_crossing/commons/views/image_fullscreen.dart';
 import 'package:animal_crossing/modules/fish_detailed/domain/blocs/fish_bloc/fish_bloc.dart';
 import 'package:animal_crossing/modules/fish_detailed/domain/use_cases/fish_use_case.dart';
 import 'package:animal_crossing/modules/fish_detailed/infra/repositories/fish_repository.dart';
@@ -39,6 +40,12 @@ class FishDetailedModule extends Module {
           FishDetailed.route,
           child: (_, args) => FishDetailed(
             fish: args.data,
+          ),
+        ),
+        ChildRoute(
+          ImageFullscreen.route,
+          child: (_, args) => ImageFullscreen(
+            source: args.data,
           ),
         )
       ];
