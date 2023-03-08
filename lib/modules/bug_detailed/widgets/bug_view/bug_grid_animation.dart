@@ -1,5 +1,6 @@
+import 'package:animal_crossing/commons/widgets/grids/core_grid/core_grid.dart';
 import 'package:animal_crossing/modules/bug_detailed/domain/entities/bug.dart';
-import 'package:animal_crossing/modules/bug_detailed/widgets/bug_view/bug_grid.dart';
+import 'package:animal_crossing/modules/bug_detailed/views/bug_detailed_view.dart';
 import 'package:flutter/widgets.dart';
 
 class BugGridAnimation extends StatefulWidget {
@@ -36,9 +37,10 @@ class _BugGridAnimationState extends State<BugGridAnimation>
     return AnimatedOpacity(
       duration: const Duration(milliseconds: 400),
       opacity: canAnimate ? 1.0 : 0.0,
-      child: BugGrid(
+      child: CoreGrid(
         size: widget.size,
-        bugs: widget.bugs,
+        itens: widget.bugs,
+        route: BugDetailedView.route,
       ),
     );
   }

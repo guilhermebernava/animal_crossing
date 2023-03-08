@@ -1,8 +1,12 @@
-class Fish {
+import 'package:animal_crossing/commons/interfaces/i_core_grid_item.dart';
+
+class Fish implements ICoreGridItem {
+  @override
   final String name;
+  @override
+  final String iconUrl;
   final int id;
   final String imageUrl;
-  final String iconUrl;
   final num price;
   final String description;
   final String catchPhrase;

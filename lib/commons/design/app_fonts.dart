@@ -12,4 +12,10 @@ class AppFonts {
     fontSize: 16,
     color: Colors.red,
   );
+
+  static final coreGridItem = GoogleFonts.roboto(
+    color: AppColors.white,
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
+  );
 }

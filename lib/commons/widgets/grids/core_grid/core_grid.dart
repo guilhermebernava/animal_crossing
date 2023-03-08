@@ -1,16 +1,21 @@
-import 'package:animal_crossing/modules/bug_detailed/domain/entities/bug.dart';
-import 'package:animal_crossing/modules/bug_detailed/widgets/bug_view/bug_grid_item.dart';
+import 'package:animal_crossing/commons/design/app_colors.dart';
+import 'package:animal_crossing/commons/interfaces/i_core_grid_item.dart';
+import 'package:animal_crossing/commons/widgets/grids/core_grid/core_grid_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
-class BugGrid extends StatelessWidget {
+class CoreGrid<T extends ICoreGridItem> extends StatelessWidget {
   final Size size;
-  final List<Bug> bugs;
+  final List<T> itens;
+  final String route;
+  final List<Color> colors;
 
-  const BugGrid({
+  const CoreGrid({
     super.key,
     required this.size,
-    required this.bugs,
+    required this.itens,
+    required this.route,
+    this.colors = const [AppColors.purple, AppColors.green2],
   });
 
   @override
@@ -25,17 +30,19 @@ class BugGrid extends StatelessWidget {
             crossAxisSpacing: 20,
             mainAxisSpacing: 20,
           ),
-          itemCount: bugs.length,
+          itemCount: itens.length,
           itemBuilder: (_, index) {
-            final bug = bugs[index];
+            final item = itens[index];
             return AnimationConfiguration.staggeredGrid(
               position: index,
               columnCount: 2,
               child: ScaleAnimation(
                 duration: const Duration(milliseconds: 1200),
                 child: FadeInAnimation(
-                  child: BugGridItem(
-                    bug: bug,
+                  child: CoreGridItem(
+                    item: item,
+                    route: route,
+                    colors: colors,
                   ),
                 ),
               ),

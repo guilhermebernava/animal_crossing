@@ -26,12 +26,12 @@ class TransparentAppBarWidget extends StatelessWidget {
                 () {
                   Modular.to.pop();
                 },
-            child: Icon(
+            child: const Icon(
               Icons.arrow_back_ios_new,
-              color: AppColors.white,
+              color: AppColors.black,
               shadows: [
                 Shadow(
-                  color: AppColors.black.withOpacity(0.5),
+                  color: AppColors.black,
                   blurRadius: 3,
                 )
               ],

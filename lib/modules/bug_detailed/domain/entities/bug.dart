@@ -1,8 +1,12 @@
-class Bug {
-  final int id;
-  final String name;
-  final String imageUrl;
+import 'package:animal_crossing/commons/interfaces/i_core_grid_item.dart';
+
+class Bug implements ICoreGridItem {
+  @override
   final String iconUrl;
+  @override
+  final String name;
+  final int id;
+  final String imageUrl;
   final double price;
   final double priceFlick;
   final String catchPhrase;

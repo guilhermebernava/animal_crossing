@@ -2,6 +2,7 @@ import 'package:animal_crossing/commons/assets/app_images.dart';
 import 'package:animal_crossing/commons/design/app_colors.dart';
 import 'package:animal_crossing/modules/home/widgets/home_custom_container.dart';
 import 'package:flutter/material.dart';
+import 'dart:io' show Platform;
 
 class HomeLogo extends StatelessWidget {
   final Size size;
@@ -19,7 +20,9 @@ class HomeLogo extends StatelessWidget {
         width: size.width,
         height: size.height * height,
         child: Padding(
-          padding: const EdgeInsets.only(bottom: 10.0),
+          padding: EdgeInsets.only(
+            top: Platform.isIOS ? 30.0 : 10.0,
+          ),
           child: Center(
             child: Image.asset(
               AppImages.leaf,

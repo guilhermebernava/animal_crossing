@@ -1,24 +1,27 @@
 import 'package:animal_crossing/commons/design/app_colors.dart';
-import 'package:animal_crossing/modules/bug_detailed/designs/bug_fonts.dart';
-import 'package:animal_crossing/modules/bug_detailed/domain/entities/bug.dart';
-import 'package:animal_crossing/modules/bug_detailed/views/bug_detailed_view.dart';
+import 'package:animal_crossing/commons/design/app_fonts.dart';
+import 'package:animal_crossing/commons/interfaces/i_core_grid_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-class BugGridItem extends StatelessWidget {
-  final Bug bug;
+class CoreGridItem<T extends ICoreGridItem> extends StatelessWidget {
+  final T item;
+  final String route;
+  final List<Color> colors;
 
-  const BugGridItem({
+  const CoreGridItem({
     super.key,
-    required this.bug,
+    required this.item,
+    required this.route,
+    required this.colors,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => Modular.to.pushNamed(
-        ".${BugDetailedView.route}",
-        arguments: bug,
+        ".$route",
+        arguments: item,
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(
@@ -33,8 +36,8 @@ class BugGridItem extends StatelessWidget {
                 spreadRadius: 1,
               ),
             ],
-            gradient: const LinearGradient(
-              colors: [AppColors.purple, AppColors.green2],
+            gradient: LinearGradient(
+              colors: colors,
               begin: Alignment.bottomRight,
               end: Alignment.topLeft,
             ),
@@ -51,7 +54,7 @@ class BugGridItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Image.network(
-                  bug.iconUrl,
+                  item.iconUrl,
                   scale: 1.5,
                 ),
                 Padding(
@@ -63,8 +66,8 @@ class BugGridItem extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  bug.name.toUpperCase(),
-                  style: BugFonts.gridItemName,
+                  item.name.toUpperCase(),
+                  style: AppFonts.coreGridItem,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.center,
                   maxLines: 2,

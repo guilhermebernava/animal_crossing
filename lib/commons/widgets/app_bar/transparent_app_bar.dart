@@ -18,7 +18,7 @@ class TransparentAppBar extends AppBar {
                 },
             child: Icon(
               Icons.arrow_back_ios_new,
-              color: AppColors.white,
+              color: AppColors.black,
               shadows: [
                 Shadow(
                   color: AppColors.black.withOpacity(0.5),

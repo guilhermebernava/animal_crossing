@@ -5,7 +5,7 @@ import 'package:animal_crossing/commons/widgets/inputs/search_input.dart';
 import 'package:animal_crossing/modules/fish_detailed/domain/blocs/fish_bloc/fish_events.dart';
 import 'package:animal_crossing/modules/fish_detailed/domain/blocs/fish_bloc/fish_states.dart';
 import 'package:animal_crossing/modules/fish_detailed/domain/interfaces/use_cases/i_fish_use_case.dart';
-import 'package:animal_crossing/modules/fish_detailed/widgets/fish_view/list_container_animation.dart';
+import 'package:animal_crossing/modules/fish_detailed/widgets/fish_view/fishes_grid.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -37,25 +37,27 @@ class _FishBuilderState extends State<FishBuilder> {
         bloc: widget.useCase.fishBloc,
         builder: (_, state) {
           if (state is Fishes) {
-            return Column(
-              children: [
-                const SizedBox(
-                  height: 8,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 4),
-                  child: TransparentAppBarWidget(
-                    onTap: () => Modular.to.navigate(AppRoutes.homeModule),
+            return SingleChildScrollView(
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 8,
                   ),
-                ),
-                SearchInput(
-                  controller: widget.useCase.searchController,
-                ),
-                ListContainerAnimation(
-                  size: widget.size,
-                  fishes: state.fishes,
-                ),
-              ],
+                  Padding(
+                    padding: const EdgeInsets.only(left: 4),
+                    child: TransparentAppBarWidget(
+                      onTap: () => Modular.to.navigate(AppRoutes.homeModule),
+                    ),
+                  ),
+                  SearchInput(
+                    controller: widget.useCase.searchController,
+                  ),
+                  FishesGrid(
+                    size: widget.size,
+                    fishes: state.fishes,
+                  ),
+                ],
+              ),
             );
           }
           return const LoadingWidget();
