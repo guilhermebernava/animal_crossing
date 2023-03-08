@@ -8,6 +8,8 @@ class FishGetById implements FishEvents {
   });
 }
 
+class FishClear implements FishEvents {}
+
 class FishSearch implements FishEvents {
   final String text;
 

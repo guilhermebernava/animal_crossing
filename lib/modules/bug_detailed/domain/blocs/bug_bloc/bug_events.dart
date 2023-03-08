@@ -8,6 +8,8 @@ class GetBugById implements BugEvents {
   GetBugById({required this.id});
 }
 
+class BugClear implements BugEvents {}
+
 class SearchBug implements BugEvents {
   final String text;
 

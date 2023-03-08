@@ -20,13 +20,15 @@ class BugUseCase implements IBugUseCase {
   }
 
   @override
-  void clear() => bugBloc.add(GetAllBugs());
+  void clear() => bugBloc.add(BugClear());
 
   @override
   void search() {
     if (searchController.text != "") {
       bugBloc.add(SearchBug(text: searchController.text));
+      return;
     }
+    clear();
   }
 
   @override

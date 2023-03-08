@@ -12,6 +12,10 @@ class FishBloc extends Bloc<FishEvents, FishStates> {
   FishBloc({
     required this.fishRepository,
   }) : super(FishLoading()) {
+    on<FishClear>((_, emit) {
+      emit(Fishes(fishes: fishes));
+    });
+
     on<FishGetAll>((event, emit) async {
       emit(FishLoading());
       final result = await fishRepository.getAllFishs();

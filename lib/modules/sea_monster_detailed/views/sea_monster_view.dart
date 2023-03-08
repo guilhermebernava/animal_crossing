@@ -14,6 +14,7 @@ class SeaMonsterView extends StatelessWidget {
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
+      //TODO adicionar BlocBuilder
       body: SeaMonsterBackground(
         size: size,
         child: SingleChildScrollView(

@@ -12,6 +12,10 @@ class BugBloc extends Bloc<BugEvents, BugStates> {
   BugBloc({
     required this.bugRepository,
   }) : super(BugLoading()) {
+    on<BugClear>((event, emit) {
+      emit(Bugs(bugs: bugs));
+    });
+
     on<SearchBug>((event, emit) async {
       emit(BugLoading());
       final filtredBugs =

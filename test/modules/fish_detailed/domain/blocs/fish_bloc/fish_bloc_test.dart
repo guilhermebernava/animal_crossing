@@ -19,6 +19,16 @@ void main() {
   );
 
   blocTest<FishBloc, FishStates>(
+    'emits [Fishes]',
+    build: () => FishBloc(
+      fishRepository: repository,
+    ),
+    act: (bloc) => bloc.add(FishClear()),
+    expect: () => [isA<Fishes>()],
+    wait: const Duration(seconds: 1),
+  );
+
+  blocTest<FishBloc, FishStates>(
     'emits [Fishes] when have sucess getting fish by ID',
     build: () => FishBloc(
       fishRepository: repository,

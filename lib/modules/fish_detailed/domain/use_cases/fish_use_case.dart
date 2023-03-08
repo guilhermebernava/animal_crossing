@@ -17,13 +17,15 @@ class FishUseCase implements IFishUseCase {
 
   @override
   void clear() {
-    fishBloc.add(FishGetAll());
+    fishBloc.add(FishClear());
   }
 
   @override
   void search() {
     if (searchController.text != "") {
       fishBloc.add(FishSearch(text: searchController.text));
+      return;
     }
+    clear();
   }
 }
