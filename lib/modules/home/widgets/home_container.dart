@@ -36,10 +36,10 @@ class HomeContainer extends StatelessWidget {
           ),
           borderRadius: BorderRadius.circular(20),
           image: DecorationImage(
-            image: AssetImage(
+            image: NetworkImage(
               image,
             ),
-            scale: 1.6,
+            scale: 1.5,
           ),
         ),
       ),
