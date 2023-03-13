@@ -47,6 +47,6 @@ class FishDetailedModule extends Module {
           child: (_, args) => ImageFullscreen(
             source: args.data,
           ),
-        )
+        ),
       ];
 }

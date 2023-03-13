@@ -16,7 +16,9 @@ class SeaMonsterUseCase implements ISeaMonsterUseCase {
   SeaMonsterUseCase({
     required this.bloc,
     required this.seaMonsterRepository,
-  });
+  }) {
+    searchController.addListener(search);
+  }
 
   @override
   void clear() => bloc.add(SeaMonsterClear());

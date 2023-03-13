@@ -20,7 +20,7 @@ class FishesGrid extends StatelessWidget {
       size: size,
       itens: fishes,
       route: FishDetailed.route,
-      colors: const [AppColors.blue, AppColors.darkBlue],
+      colors: const [AppColors.blue, AppColors.green],
     );
   }
 }
