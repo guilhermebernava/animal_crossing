@@ -57,31 +57,24 @@ class _HomeGridAnimationState extends State<HomeGridAnimation>
             color: AppColors.lightBrown,
             image:
                 "https://dodo.ac/np/images/thumb/5/57/Fossil_NH_Inv_Icon.png/120px-Fossil_NH_Inv_Icon.png",
-            route: AppRoutes.seaMonsterDetailed,
+            route: AppRoutes.fossilDetailed,
           ),
           HomeGridItem(
             color: AppColors.purple,
             image: "https://acnhapi.com/v1/icons/villagers/1",
-            route: AppRoutes.seaMonsterDetailed,
+            route: AppRoutes.villagersDetailed,
           ),
           HomeGridItem(
             color: AppColors.orange,
             image:
                 "https://i.pinimg.com/736x/89/fd/8d/89fd8d5ef4e81dd43832d81c615ef2f4.jpg",
-            route: AppRoutes.seaMonsterDetailed,
-          ),
-          //TODO arrumar imagens
-          HomeGridItem(
-            color: AppColors.orange,
-            image:
-                "https://i.pinimg.com/736x/89/fd/8d/89fd8d5ef4e81dd43832d81c615ef2f4.jpg",
-            route: AppRoutes.seaMonsterDetailed,
+            route: AppRoutes.songsDetailed,
           ),
           HomeGridItem(
-            color: AppColors.lightBlack,
+            color: AppColors.green,
             image:
                 "https://www.models-resource.com/resources/big_icons/34/33824.png?updated=1581173928",
-            route: AppRoutes.seaMonsterDetailed,
+            route: AppRoutes.artDetailed,
           ),
         ],
       ),
